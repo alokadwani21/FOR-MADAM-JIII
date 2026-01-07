@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Garvita 🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+  #lockScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e9d8fd, #ffe5d9);
+}
+
+#lockScreen input {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  width: 230px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#lockScreen button {
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: none;
+  background: #9d4edd;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e9d8fd, #ffe5d9);
+  color: #333;
+  text-align: center;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #7b2cbf;
+}
+
+h2 {
+  color: #9d4edd;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #9d4edd;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.memories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.caption {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #555;
+}
+
+footer {
+  padding: 40px;
+  font-size: 0.9rem;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+  <div id="lockScreen">
+  <h1>Garvita 🌸</h1>
+  <p>This message is private.<br>Please enter the password to continue.</p>
+  <input type="password" id="password" placeholder="Password">
+  <br><br>
+  <button onclick="checkPassword()">Continue</button>
+  <p id="error" style="color:#c1121f;"></p>
+</div>
+
+<section id="mainContent" style="display:none;">
+  <h1>Garvita 🌸</h1>
+  <p>This is something I wanted to say… honestly.</p>
+  <a href="#note" class="btn">Please read 💭</a>
+</section>
+
+<section id="note">
+  <div class="card">
+    <h2>I’m Sorry</h2>
+    <p>
+      Garvita,  
+      I want to genuinely apologize for the mistake I made.  
+      It was never my intention to hurt you,  
+      and I truly regret the way things happened.
+      <br><br>
+      I take responsibility for my actions,  
+      and I respect whatever you feel.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Thank You 🤍</h2>
+    <p>
+      Thank you for the joyful memories,  
+      the laughs, the moments, and the time we shared.  
+      Those memories will always stay meaningful to me.
+      <br><br>
+      I’m grateful for what we had,  
+      and for the person you are.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Some Memories I’ll Always Remember</h2>
+  <div class="memories">
+    <div>
+      <img src="memory1.jpg" class="photo">
+      <p class="caption">A moment I’ll always smile about</p>
+    </div>
+    <div>
+      <img src="memory2.jpg" class="photo">
+      <p class="caption">One of the good days 🤍</p>
+    </div>
+    <div>
+      <img src="memory3.jpg" class="photo">
+      <p class="caption">Thank you for this memory</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>From Me</h2>
+    <p>
+      I wish you happiness, peace,  
+      and everything good ahead in life 🌸  
+    </p>
+    <p><strong>— Alok</strong></p>
+  </div>
+</section>
+
+<footer>
+  Made with honesty and respect 🤍
+</footer>
+
+</body>
+  <script>
+function checkPassword() {
+  const correctPassword = "MADAM JII";
+  const entered = document.getElementById("password").value;
+
+  if (entered === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Incorrect password. Please try again.";
+  }
+}
+</script>
+</html>
